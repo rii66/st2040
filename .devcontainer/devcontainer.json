@@ -1,5 +1,5 @@
 {
-  "name": "Rasp RP2040",
+  "name": "Rasp RP2040 Arduino-Pico",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "postCreateCommand": "curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh && sudo mv bin/arduino-cli /usr/local/bin/arduino-cli && arduino-cli config init --overwrite && arduino-cli core update-index && arduino-cli core install arduino:mbed_rp2040"
+  "postCreateCommand": "curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh && sudo mv bin/arduino-cli /usr/local/bin/arduino-cli && arduino-cli config init --overwrite && arduino-cli config add board_manager.additional_urls https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json && arduino-cli core update-index && arduino-cli core install rp2040:rp2040 && arduino-cli lib install U8g2"
 }
